@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  app1:
+    build: ./app
+    container_name: app1_container
+    ports:
+      - "5001:5000"
+    volumes:
+      - messages_data:/messages_volume
+    networks:
+      - app-net
+    environment:
+      SERVICE_NAME: app1
+      OTHER_SERVICES: app2,app3
+
+  app2:
+    build: ./app
+    container_name: app2_container
+    ports:
+      - "5002:5000"
+    volumes:
+      - messages_data:/messages_volume
+    networks:
+      - app-net
+    environment:
+      SERVICE_NAME: app2
+      OTHER_SERVICES: app1,app3
+
+  app3:
+    build: ./app
+    container_name: app3_container
+    ports:
+      - "5003:5000"
+    volumes:
+      - messages_data:/messages_volume
+    networks:
+      - app-net
+    environment:
+      SERVICE_NAME: app3
+      OTHER_SERVICES: app1,app2
+
+volumes:
+  messages_data:
+    driver: local
+
+networks:
+  app-net:
+    driver: bridge
