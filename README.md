@@ -44,9 +44,9 @@ chmod +x test.sh
 
 ### 5. Verificar arquivos no volume
 ```bash
-docker exec app1 ls /messages_volume
-docker exec app1 cat /messages_volume/app1_messages.json
-docker exec app1 cat /messages_volume/app1_log.txt
+docker exec app1_container ls /messages_volume
+docker exec app1_container cat /messages_volume/app1_messages.json
+docker exec app1_container cat /messages_volume/app1_log.txt
 ```
 
 ### 6. Encerrar o ambiente
