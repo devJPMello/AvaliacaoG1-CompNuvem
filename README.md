@@ -66,4 +66,4 @@ docker-compose down
 - Docker Compose (orquestração dos serviços)
 
 ## Autores
-Projeto desenvolvido para fins acadêmicos na disciplina **Computação em nuvem (G1 - 2025/2)**.
+Projeto desenvolvido para fins acadêmicos na disciplina **Computação em Nuvem (G1 - 2025/2)**.
